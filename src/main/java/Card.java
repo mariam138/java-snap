@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+
 public class Card {
-    String suit;
+    String[] suit = {"\u2660", "\u2663", "\u2665", "\u2666"};
     String symbol;
     int value;
+
+//    ArrayList<suit> suits = new ArrayList<>();
+
 
     @Override
     public String toString() {
