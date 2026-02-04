@@ -65,4 +65,10 @@ public class CardGame {
        return deckOfCards;
     }
 
+    // Sorts deck based on suits
+    public ArrayList<Card> sortDeckIntoSuits() {
+        deckOfCards.sort(Comparator.comparing(Card::getSuit));
+        return deckOfCards;
+    }
+
 }
