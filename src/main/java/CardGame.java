@@ -10,12 +10,12 @@ public class CardGame {
 
     // spade, club, heart, diamond
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
+    private static final String[] SYMBOLS = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
 
     // We pass in the name of game to be played when creating a new card game instance
     public CardGame(ArrayList<Card> cards, String name) {
         this.nameOfGame = name;
         this.deckOfCards = new ArrayList<>(52);
-
 
 
     }
