@@ -4,10 +4,20 @@ public class CardGame {
     private ArrayList<Card> deckOfCards;
     private String nameOfGame;
 
+    // We have 4 suits
+    // For each suit, we need to create 13 cards from 2 - A
+    // We add all of these cards together to create a deck of 52
+
+    // spade, club, heart, diamond
+    private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
+
     // We pass in the name of game to be played when creating a new card game instance
     public CardGame(ArrayList<Card> cards, String name) {
-        this.deckOfCards = new ArrayList<>(52);
         this.nameOfGame = name;
+        this.deckOfCards = new ArrayList<>(52);
+
+
+
     }
 
 }
