@@ -6,8 +6,6 @@ public class CardGame {
 
     // spade, club, heart, diamond
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
-    private static final String[] SYMBOLS = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
-    private static final int[] VALUES = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
     //    Assign numeric values to the cards using enum
     public enum CardValue {
