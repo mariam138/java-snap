@@ -4,15 +4,12 @@ public class CardGame {
     private ArrayList<Card> deckOfCards;
     private String nameOfGame;
 
-    // We have 4 suits
-    // For each suit, we need to create 13 cards from 2 - A
-    // We add all of these cards together to create a deck of 52
-
     // spade, club, heart, diamond
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
     private static final String[] SYMBOLS = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
     private static final int[] VALUES = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
+    //    Assign numeric values to the cards using enum
     public enum CardValue {
         TWO(2),
         THREE(3),
@@ -29,6 +26,7 @@ public class CardGame {
         A(14);
 
         private int cardValue;
+
         private CardValue(int value) {
             this.cardValue = value;
         }
@@ -39,9 +37,19 @@ public class CardGame {
     }
 
     // We pass in the name of game to be played when creating a new card game instance
-    public CardGame(ArrayList<Card> cards, String name) {
+//    We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
+    public CardGame(String name) {
         this.nameOfGame = name;
         this.deckOfCards = new ArrayList<>(52);
+        for (int i = 0; i < 13; i++) {
+            CardValue value = CardValue.values()[i];
+
+            for (int j = 0; j < 4; j++) {
+                Card card = new Card(SUITS[j], value);
+                deckOfCards.add(card);
+            }
+        }
+        System.out.println(deckOfCards.size());
 
 
     }
