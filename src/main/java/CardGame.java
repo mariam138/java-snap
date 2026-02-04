@@ -39,16 +39,16 @@ public class CardGame {
     public CardGame(String name) {
         this.nameOfGame = name;
         this.deckOfCards = new ArrayList<>(52);
+//        Loop through each card of a suit to assign it's value based on the enum
+//        enum has 12 elements so we set i < 13
         for (int i = 0; i < 13; i++) {
             CardValue value = CardValue.values()[i];
-
+//            For each value we then assign it to a card instance alongside the suit, then add it to the deck
             for (int j = 0; j < 4; j++) {
                 Card card = new Card(SUITS[j], value);
                 deckOfCards.add(card);
             }
         }
-        System.out.println(deckOfCards.size());
-
 
     }
 
