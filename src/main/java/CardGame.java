@@ -1,17 +1,15 @@
 import java.util.ArrayList;
 
 public class CardGame {
-    private ArrayList<Card> cards = new ArrayList<>(52);
-    String nameOfGame;
+    private ArrayList<Card> deckOfCards;
+    private String nameOfGame;
 
     // We pass in the name of game to be played when creating a new card game instance
-    public CardGame(String name) {
+    public CardGame(ArrayList<Card> cards, String name) {
+        this.deckOfCards = new ArrayList<>(52);
         this.nameOfGame = name;
     }
 
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
 }
 
 // public enum CardValue
