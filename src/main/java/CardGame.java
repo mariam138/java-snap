@@ -39,7 +39,7 @@ public class CardGame {
     public CardGame(String name) {
         this.nameOfGame = name;
         this.deckOfCards = new ArrayList<>(52);
-//        Loop through each card of a suit to assign it's value based on the enum
+//        Loop through each card of a suit to assign its value based on the enum
 //        enum has 12 elements so we set i < 13
         for (int i = 0; i < 13; i++) {
             CardValue value = CardValue.values()[i];
@@ -50,6 +50,11 @@ public class CardGame {
             }
         }
 
+    }
+
+//    Takes card from top of deck and returns it
+    public Card dealCard() {
+        return deckOfCards.getLast();
     }
 
 }
