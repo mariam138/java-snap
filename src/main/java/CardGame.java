@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardGame {
     private ArrayList<Card> deckOfCards;
@@ -55,6 +57,12 @@ public class CardGame {
 //    Takes card from top of deck and returns it
     public Card dealCard() {
         return deckOfCards.getLast();
+    }
+
+//    Sorts the deck in ascending number order based on the card value
+    public ArrayList<Card> sortDeckInNumberOrder() {
+       deckOfCards.sort(Comparator.comparing(Card::getCardValue));
+       return deckOfCards;
     }
 
 }
