@@ -1,25 +1,20 @@
 public class Card {
-   private String suit;
-//    String symbol;
-//    int value;
+    private String suit;
     private CardGame.CardValue cardValue;
 
     public Card(String suit, CardGame.CardValue cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
-//        this.symbol = symbol;
-//        this.value = value;
-
     }
 
-//    @Override
-//    public String toString() {
-//        return "Card{" +
-//                "suit='" + suit + '\'' +
-//                ", symbol='" + symbol + '\'' +
-//                ", value=" + value +
-//                '}';
-//    }
+
+    public CardGame.CardValue getCardValue() {
+        return cardValue;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
 
     @Override
     public String toString() {
