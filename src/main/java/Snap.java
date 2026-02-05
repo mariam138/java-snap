@@ -13,6 +13,7 @@ public class Snap extends CardGame{
         // a card is dealt each turn
 
     // Deals out last card from deck, and then makes sure to remove it from deckOfCards
+    @Override
     protected Card dealCard() {
         Card lastCard = deckOfCards.getLast();
         deckOfCards.remove(lastCard);
