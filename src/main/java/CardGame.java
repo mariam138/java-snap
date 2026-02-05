@@ -61,7 +61,7 @@ public class CardGame {
 
     //    Takes card from top of deck and returns it
     protected Card dealCard() {
-        return deckOfCards.getLast();
+        return deckOfCards.removeLast();
     }
 
     //    Sorts the deck in ascending number order based on the card value
