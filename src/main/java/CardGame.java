@@ -40,7 +40,13 @@ public class CardGame {
 //    We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
     public CardGame(String name) {
         this.nameOfGame = name;
-        this.deckOfCards = new ArrayList<>(52);
+        this.deckOfCards = createDeck();
+//
+
+    }
+
+    protected ArrayList<Card> createDeck() {
+        ArrayList<Card> deckOfCards = new ArrayList<>(52);
 //        Loop through each card of a suit to assign its value based on the enum
 //        enum has 12 elements so we set i < 13
         for (int i = 0; i < 13; i++) {
@@ -51,18 +57,18 @@ public class CardGame {
                 deckOfCards.add(card);
             }
         }
-
+        return deckOfCards;
     }
 
-//    Takes card from top of deck and returns it
+    //    Takes card from top of deck and returns it
     protected Card dealCard() {
         return deckOfCards.getLast();
     }
 
-//    Sorts the deck in ascending number order based on the card value
+    //    Sorts the deck in ascending number order based on the card value
     protected ArrayList<Card> sortDeckInNumberOrder() {
-       deckOfCards.sort(Comparator.comparing(Card::getCardValue));
-       return deckOfCards;
+        deckOfCards.sort(Comparator.comparing(Card::getCardValue));
+        return deckOfCards;
     }
 
     // Sorts deck based on suits
