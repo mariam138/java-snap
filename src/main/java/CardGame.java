@@ -9,7 +9,7 @@ public class CardGame {
     // spade, club, heart, diamond
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
 
-    //    Assign numeric values to the cards using enum
+    // Assign numeric values to the cards using enum
     protected enum CardValue {
         TWO(2),
         THREE(3),
@@ -37,21 +37,20 @@ public class CardGame {
     }
 
     // We pass in the name of game to be played when creating a new card game instance
-//    We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
+    // We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
     public CardGame(String name) {
         this.nameOfGame = name;
         this.deckOfCards = createDeck();
-//
-
     }
 
     protected ArrayList<Card> createDeck() {
         ArrayList<Card> deckOfCards = new ArrayList<>(52);
-//        Loop through each card of a suit to assign its value based on the enum
-//        enum has 12 elements so we set i < 13
+        // Loop through each card of a suit to assign its value based on the enum
+        // enum has 12 elements so we set i < 13
         for (int i = 0; i < 13; i++) {
             CardValue value = CardValue.values()[i];
-//            For each value we then assign it to a card instance alongside the suit, then add it to the deck
+            // For each value we then assign it to a card instance alongside the suit, then add it to the
+            // deck
             for (int j = 0; j < 4; j++) {
                 Card card = new Card(SUITS[j], value);
                 deckOfCards.add(card);
@@ -81,5 +80,4 @@ public class CardGame {
         Collections.shuffle(deckOfCards);
         return deckOfCards;
     }
-
 }
