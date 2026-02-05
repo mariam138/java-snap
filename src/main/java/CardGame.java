@@ -10,7 +10,7 @@ public class CardGame {
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
 
     //    Assign numeric values to the cards using enum
-    public enum CardValue {
+    private enum CardValue {
         TWO(2),
         THREE(3),
         FOUR(4),
@@ -55,23 +55,23 @@ public class CardGame {
     }
 
 //    Takes card from top of deck and returns it
-    public Card dealCard() {
+    protected Card dealCard() {
         return deckOfCards.getLast();
     }
 
 //    Sorts the deck in ascending number order based on the card value
-    public ArrayList<Card> sortDeckInNumberOrder() {
+    protected ArrayList<Card> sortDeckInNumberOrder() {
        deckOfCards.sort(Comparator.comparing(Card::getCardValue));
        return deckOfCards;
     }
 
     // Sorts deck based on suits
-    public ArrayList<Card> sortDeckIntoSuits() {
+    protected ArrayList<Card> sortDeckIntoSuits() {
         deckOfCards.sort(Comparator.comparing(Card::getSuit));
         return deckOfCards;
     }
 
-    public ArrayList<Card> shuffleDeck() {
+    protected ArrayList<Card> shuffleDeck() {
         Collections.shuffle(deckOfCards);
         return deckOfCards;
     }
