@@ -11,6 +11,9 @@ public class Snap extends CardGame{
     // game
         // when user presses enter, deal first card - dealCard()
         // a card is dealt each turn
+        // Compare just dealt card and card before by their cardValue
+        // If the value matches, tell player they have won
+        // end the game
 
     // Deals out last card from deck, and then makes sure to remove it from deckOfCards
     @Override
