@@ -1,4 +1,4 @@
-public class Snap extends CardGame{
+public class Snap extends CardGame {
     public Snap(String name) {
         super(name);
     }
@@ -26,5 +26,15 @@ public class Snap extends CardGame{
     // compare values of last two cards to end game
     // cardA.getCardValue == lastCard.getCardValue
     // if true, "You win!" and end game
+    protected boolean compareCardValues(Card prevCard, Card currCard) {
 
+        //            previousCard = dealtCard;
+        //        System.out.println("dealt card:" + dealtCard);
+        //        System.out.println("prev card:" + previousCard);
+        //        Card newDealtCard = dealCard();
+        //        System.out.println("new card:" + newDealtCard);
+        ////        System.out.println(dealCard());
+
+        return prevCard.getCardValue() == currCard.getCardValue();
+    }
 }
