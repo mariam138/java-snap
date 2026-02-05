@@ -10,7 +10,7 @@ public class CardGame {
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
 
     //    Assign numeric values to the cards using enum
-    private enum CardValue {
+    protected enum CardValue {
         TWO(2),
         THREE(3),
         FOUR(4),
