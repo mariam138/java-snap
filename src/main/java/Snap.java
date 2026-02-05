@@ -18,9 +18,13 @@ public class Snap extends CardGame{
     // Deals out last card from deck, and then makes sure to remove it from deckOfCards
     @Override
     protected Card dealCard() {
-        Card lastCard = deckOfCards.getLast();
-        deckOfCards.remove(lastCard);
-        return lastCard;
+        Card dealtCard = deckOfCards.getLast();
+        deckOfCards.remove(dealtCard);
+        return dealtCard;
     }
+
+    // compare values of last two cards to end game
+    // cardA.getCardValue == lastCard.getCardValue
+    // if true, "You win!" and end game
 
 }
