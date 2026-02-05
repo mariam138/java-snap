@@ -15,12 +15,6 @@ public class Snap extends CardGame {
         // If the value matches, tell player they have won
         // end the game
 
-    // Deals out last card from deck, and then makes sure to remove it from deckOfCards
-    @Override
-    protected Card dealCard() {
-        return deckOfCards.removeLast();
-    }
-
     // compare values of last two cards to end game
     // cardA.getCardValue == lastCard.getCardValue
     // if true, "You win!" and end game
