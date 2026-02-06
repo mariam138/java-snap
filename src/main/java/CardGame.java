@@ -9,33 +9,6 @@ public class CardGame {
     // spade, club, heart, diamond
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
 
-    // Assign numeric values to the cards using enum
-    protected enum CardValue {
-        TWO(2),
-        THREE(3),
-        FOUR(4),
-        FIVE(5),
-        SIX(6),
-        SEVEN(7),
-        EIGHT(8),
-        NINE(9),
-        TEN(10),
-        J(11),
-        Q(12),
-        K(13),
-        A(14);
-
-        private int cardValue;
-
-        private CardValue(int value) {
-            this.cardValue = value;
-        }
-
-        public int getCardValue() {
-            return cardValue;
-        }
-    }
-
     // We pass in the name of game to be played when creating a new card game instance
     // We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
     public CardGame(String name) {
