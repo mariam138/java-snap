@@ -1,14 +1,14 @@
 public class Card {
     private String suit;
-    private CardGame.CardValue cardValue;
+    private CardValue cardValue;
 
-    public Card(String suit, CardGame.CardValue cardValue) {
+    public Card(String suit, CardValue cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
     }
 
 
-    public CardGame.CardValue getCardValue() {
+    public CardValue getCardValue() {
         return cardValue;
     }
 
