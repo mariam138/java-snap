@@ -38,14 +38,14 @@ public class Snap extends CardGame {
     // compare values of last two cards to end game
     // cardA.getCardValue == lastCard.getCardValue
     // if true, "You win!" and end game
-    protected boolean compareCardValues(Card prevCard, Card currCard) {
-        return prevCard.getCardValue() == currCard.getCardValue();
+    protected boolean compareCardValues(Card prevCard, Card currCard)
+    {   if (prevCard == null) {
+        return false;
     }
+        return prevCard.getCardValue() == currCard.getCardValue();
+     }
 
-//    protected Card playTurn() {
-//        Card currCard = dealCard();
-//        return currCard;
-//    }
+
 
     protected boolean playTurn() {
         Card currCard = dealCard();
