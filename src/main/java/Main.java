@@ -8,6 +8,7 @@ public class Main {
     static void main(String[] args) {
 
         Snap snap = new Snap("snap");
+        boolean game = true;
 
         // Ask user if they want to play snap
         // y - start game
@@ -58,9 +59,20 @@ public class Main {
         //        timer.schedule(timerTask, 1500);
         snap.shuffleDeck();
         System.out.println("The deck has been shuffled!\n");
-        String userKey = scanner.nextLine();
-        if (userKey.isEmpty()) {
-            snap.playTurn();
+        while (game) {
+            System.out.println("Press enter to deal a card.");
+            String userKey = scanner.nextLine();
+            if (userKey.isEmpty()) {
+               boolean turn = snap.playTurn();
+                if (turn) {
+                    System.out.println("Snap!");
+                    System.out.println("You win!");
+                    game = false;
+                }
+            }
+
         }
+
+
     }
 }
