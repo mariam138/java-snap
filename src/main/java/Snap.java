@@ -16,6 +16,7 @@ public class Snap extends CardGame {
 
     protected boolean playTurn() {
         Card currCard = dealCard();
+        System.out.println(currCard);
 
         boolean result = compareCardValues(prevCard, currCard);
         if (!result) {
