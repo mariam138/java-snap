@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static java.awt.event.KeyEvent.VK_ENTER;
+
 public class Main {
     static void main(String[] args) {
 
@@ -29,10 +31,10 @@ public class Main {
         // prevCard = currCard;
         // currCard is reset to dealCard() written above
         // if true, end game -> return game = false;
-// while loop written in Main to incorporate scanner
-// return value will be used in while loop in main to either continue or end game
+        // while loop written in Main to incorporate scanner
+        // return value will be used in while loop in main to either continue or end game
 
-                Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         //                System.out.printf("Hello user! Do you want to play %s?\ny/n\n", snap.nameOfGame);
         //                String input = scanner.next();
         //                if (input.equals("y")) {
@@ -42,20 +44,23 @@ public class Main {
         //                    System.out.println("Goodbye!");
         //                    scanner.close();
         //                }
-        System.out.printf("Hello user! Let's play %s!", snap.nameOfGame);
+        System.out.printf("Hello user! Let's play %s!\n", snap.nameOfGame);
 
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-//                snap.shuffleDeck();
-//                System.out.println(snap.deckOfCards);
-                System.out.println("\nPress enter to take your turn.");
-            }
-        };
-        Timer timer = new Timer();
-        timer.schedule(timerTask, 1500);
+        //        TimerTask timerTask = new TimerTask() {
+        //            @Override
+        //            public void run() {
+        //                snap.shuffleDeck();
+        //                System.out.println(snap.deckOfCards);
+        //                System.out.println("\nPress enter to take your turn.");
+        //            }
+        //        };
+        //        Timer timer = new Timer();
+        //        timer.schedule(timerTask, 1500);
         snap.shuffleDeck();
-
-
+        System.out.println("The deck has been shuffled!\n");
+        String userKey = scanner.nextLine();
+        if (userKey.isEmpty()) {
+            snap.playTurn();
+        }
     }
 }
