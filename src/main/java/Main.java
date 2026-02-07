@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
     static void main(String[] args) {
@@ -31,15 +33,29 @@ public class Main {
 // return value will be used in while loop in main to either continue or end game
 
                 Scanner scanner = new Scanner(System.in);
-                System.out.printf("Hello user! Do you want to play %s?\ny/n\n", snap.nameOfGame);
-                String input = scanner.next();
-                if (input.equals("y")) {
-                    System.out.println("Let's play!");
-                    scanner.next();
-                } else if (input.equals("n")) {
-                    System.out.println("Goodbye!");
-                    scanner.close();
-                }
+        //                System.out.printf("Hello user! Do you want to play %s?\ny/n\n", snap.nameOfGame);
+        //                String input = scanner.next();
+        //                if (input.equals("y")) {
+        //                    System.out.println("Let's play!");
+        //                    scanner.next();
+        //                } else if (input.equals("n")) {
+        //                    System.out.println("Goodbye!");
+        //                    scanner.close();
+        //                }
+        System.out.printf("Hello user! Let's play %s!", snap.nameOfGame);
+
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+//                snap.shuffleDeck();
+//                System.out.println(snap.deckOfCards);
+                System.out.println("\nPress enter to take your turn.");
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(timerTask, 1500);
+        snap.shuffleDeck();
+
 
     }
 }
