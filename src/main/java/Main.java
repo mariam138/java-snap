@@ -34,6 +34,7 @@ public class Main {
         //        timer.schedule(timerTask, 1500);
         snap.shuffleDeck();
         System.out.println("The deck has been shuffled!\n");
+
         while (game) {
             System.out.println("Press enter to deal a card.");
             String userKey = scanner.nextLine();

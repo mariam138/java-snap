@@ -13,11 +13,12 @@ public class CardGame {
     // We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
     public CardGame(String name) {
         this.nameOfGame = name;
-        this.deckOfCards = createDeck();
+        this.deckOfCards = new ArrayList<>(52);
+        createDeck();
     }
 
-    protected ArrayList<Card> createDeck() {
-        ArrayList<Card> deckOfCards = new ArrayList<>(52);
+    protected void createDeck() {
+        deckOfCards.clear();
         // Loop through each card of a suit to assign its value based on the enum
         // enum has 12 elements so we set i < 13
         for (int i = 0; i < 13; i++) {
@@ -29,7 +30,6 @@ public class CardGame {
                 deckOfCards.add(card);
             }
         }
-        return deckOfCards;
     }
 
     //    Takes card from top of deck and returns it
