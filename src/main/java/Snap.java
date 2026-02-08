@@ -5,6 +5,15 @@ public class Snap extends CardGame {
 
     Card prevCard = null;
 
+    @Override
+    protected Card dealCard() {
+        if (deckOfCards.isEmpty()) {
+            createDeck();
+            shuffleDeck();
+        }
+        return super.dealCard();
+    }
+
     // compare values of last two cards to end game
     // if true, "You win!" and end game
     protected boolean compareCardValues(Card prevCard, Card currCard) {
