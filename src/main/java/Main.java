@@ -1,3 +1,4 @@
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +8,7 @@ public class Main {
         boolean game = true;
 
         Scanner scanner = new Scanner(System.in);
+        PrintWriter printWriter = new PrintWriter(System.out, true);
         //                System.out.printf("Hello user! Do you want to play %s?\ny/n\n", snap.nameOfGame);
         //                String input = scanner.next();
         //                if (input.equals("y")) {
@@ -28,7 +30,7 @@ public class Main {
 
             if (userKey.isEmpty() && turn) {
                 Thread.sleep(500);
-                System.out.println("Snap!");
+                printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
                 System.out.println("You win!");
                 game = false;
             }
