@@ -31,6 +31,10 @@ public class Main {
         Player playerOne = new Player(nameOne);
         Player playerTwo = new Player(nameTwo);
 
+        System.out.printf("Player 1: %s\n", playerOne.getPlayerName());
+        System.out.printf("Player 2: %s\n", playerTwo.getPlayerName());
+        System.out.println("Let's play!");
+        Thread.sleep(2000);
         snap.shuffleDeck();
         System.out.println("The deck has been shuffled!\n");
 
