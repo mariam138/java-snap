@@ -8,6 +8,10 @@ public class Snap extends CardGame {
         this.noOfPlayers = 2;
     }
 
+    protected Player createPlayer(String name) {
+        return new Player(name);
+    }
+
 
     //    Checks if deck of cards is empty when dealing a card
     //    If empty, re-assign internal deckOfCards to new 52-deck and shuffle
