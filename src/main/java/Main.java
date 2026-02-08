@@ -18,7 +18,18 @@ public class Main {
         //                    System.out.println("Goodbye!");
         //                    scanner.close();
         //                }
-        System.out.printf("Hello user! Let's play %s!\n", snap.nameOfGame);
+        System.out.printf("Hello! Let's play %s!\n", snap.nameOfGame);
+        Thread.sleep(1000);
+        System.out.println("This is a two player game.");
+        Thread.sleep(1000);
+        System.out.println("Player 1, please enter your name:");
+        String nameOne = scanner.nextLine();
+        System.out.println("Player 2, please enter your name:");
+        String nameTwo = scanner.nextLine();
+
+        // Initialise new player instances for game
+        Player playerOne = new Player(nameOne);
+        Player playerTwo = new Player(nameTwo);
 
         snap.shuffleDeck();
         System.out.println("The deck has been shuffled!\n");
