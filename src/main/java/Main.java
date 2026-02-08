@@ -1,8 +1,4 @@
 import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import static java.awt.event.KeyEvent.VK_ENTER;
 
 public class Main {
     static void main(String[] args) throws InterruptedException {
