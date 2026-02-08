@@ -18,6 +18,7 @@ public class CardGame {
     }
 
     protected void createDeck() {
+        //        Clear previously instantiated deckOfCards list
         deckOfCards.clear();
         // Loop through each card of a suit to assign its value based on the enum
         // enum has 12 elements so we set i < 13

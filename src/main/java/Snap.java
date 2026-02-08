@@ -5,6 +5,9 @@ public class Snap extends CardGame {
 
     Card prevCard = null;
 
+    //    Checks if deck of cards is empty when dealing a card
+    //    If empty, re-assign internal deckOfCards to new 52-deck and shuffle
+    //    Edge-case for in case snap hasn't happened in first shuffle
     @Override
     protected Card dealCard() {
         if (deckOfCards.isEmpty()) {
