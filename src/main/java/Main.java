@@ -5,7 +5,7 @@ import java.util.TimerTask;
 import static java.awt.event.KeyEvent.VK_ENTER;
 
 public class Main {
-    static void main(String[] args) {
+    static void main(String[] args) throws InterruptedException {
 
         Snap snap = new Snap("snap");
         boolean game = true;
@@ -22,16 +22,6 @@ public class Main {
         //                }
         System.out.printf("Hello user! Let's play %s!\n", snap.nameOfGame);
 
-        //        TimerTask timerTask = new TimerTask() {
-        //            @Override
-        //            public void run() {
-        //                snap.shuffleDeck();
-        //                System.out.println(snap.deckOfCards);
-        //                System.out.println("\nPress enter to take your turn.");
-        //            }
-        //        };
-        //        Timer timer = new Timer();
-        //        timer.schedule(timerTask, 1500);
         snap.shuffleDeck();
         System.out.println("The deck has been shuffled!\n");
 
@@ -41,6 +31,7 @@ public class Main {
             boolean turn = snap.playTurn();
 
             if (userKey.isEmpty() && turn) {
+                Thread.sleep(500);
                 System.out.println("Snap!");
                 System.out.println("You win!");
                 game = false;
