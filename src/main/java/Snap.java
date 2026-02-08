@@ -1,7 +1,7 @@
 public class Snap extends CardGame {
-    int noOfPlayers = 2;
     public Snap(String name) {
         super(name);
+        this.noOfPlayers = 2;
     }
 
     Card prevCard = null;
