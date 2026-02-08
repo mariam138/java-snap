@@ -2,8 +2,8 @@ public class Player {
     String playerName;
     boolean playerWon;
 
-    public Player(String playerName, boolean playerWon) {
+    public Player(String playerName) {
         this.playerName = playerName;
-        this.playerWon = playerWon;
+        this.playerWon = false;
     }
 }
