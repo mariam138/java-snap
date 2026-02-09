@@ -21,6 +21,6 @@ public class Card {
         return "Card{" +
                 "suit='" + suit + '\'' +
                 ", cardValue=" + cardValue +
-                '}';
+                '}' + '\n';
     }
 }
