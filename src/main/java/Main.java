@@ -57,11 +57,22 @@ public class Main {
                     System.out.printf(
                             "%s, write 'SNAP' to win!\n",
                             currentPlayer.getPlayerName().toUpperCase());
-                    printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
-                    System.out.println("You win!");
+                    // Calculate elapsed time that user took to enter "snap"
+                    // Then compare elapsed time to 2 seconds to determine whether user has won
+                    long startTime = System.currentTimeMillis();
+                    String snapInput = scanner.nextLine();
+                    long elapsedTime = System.currentTimeMillis() - startTime;
+                    if (elapsedTime <= 2000) {
+                        System.out.println("You win!");
+
+                    } else {
+                        System.out.println("You lose :(");
+                    }
                     game = false;
                 }
             }
         }
     }
 }
+
+// printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
