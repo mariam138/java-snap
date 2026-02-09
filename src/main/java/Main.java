@@ -46,6 +46,7 @@ public class Main {
             // Assign current player based on turn number
             currentPlayer = (turnNumber % 2 == 0) ? playerTwo : playerOne;
 
+            System.out.printf("%s's TURN:\n", currentPlayer.getPlayerName().toUpperCase());
             System.out.println("Press enter to deal a card.");
             String userKey = scanner.nextLine();
 
@@ -53,7 +54,9 @@ public class Main {
                 boolean snapOccurred = snap.playTurn();
                 if (snapOccurred) {
                     Thread.sleep(500);
-                    System.out.printf("%s, write 'SNAP' to win!\n", currentPlayer.getPlayerName());
+                    System.out.printf(
+                            "%s, write 'SNAP' to win!\n",
+                            currentPlayer.getPlayerName().toUpperCase());
                     printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
                     System.out.println("You win!");
                     game = false;
