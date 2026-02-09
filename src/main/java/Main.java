@@ -43,15 +43,15 @@ public class Main {
 
         while (game) {
             turnNumber++;
-//            Assign current player based on turn number
+            // Assign current player based on turn number
             currentPlayer = (turnNumber % 2 == 0) ? playerTwo : playerOne;
 
             System.out.println("Press enter to deal a card.");
             String userKey = scanner.nextLine();
 
             if (userKey.isEmpty()) {
-                boolean turn = snap.playTurn();
-                if (turn) {
+                boolean snapOccurred = snap.playTurn();
+                if (snapOccurred) {
                     Thread.sleep(500);
                     printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
                     System.out.println("You win!");
