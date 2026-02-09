@@ -41,13 +41,15 @@ public class Main {
         while (game) {
             System.out.println("Press enter to deal a card.");
             String userKey = scanner.nextLine();
-            boolean turn = snap.playTurn();
 
-            if (userKey.isEmpty() && turn) {
-                Thread.sleep(500);
-                printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
-                System.out.println("You win!");
-                game = false;
+            if (userKey.isEmpty()) {
+                boolean turn = snap.playTurn();
+                if (turn) {
+                    Thread.sleep(500);
+                    printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
+                    System.out.println("You win!");
+                    game = false;
+                }
             }
         }
     }
