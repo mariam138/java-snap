@@ -2,7 +2,7 @@ public class Player {
     String playerName;
     boolean playerWon = false;
 
-    public Player(String playerName) {
+    protected Player(String playerName) {
         this.playerName = playerName;
     }
 

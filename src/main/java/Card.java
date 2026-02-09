@@ -2,7 +2,7 @@ public class Card {
     private String suit;
     private CardValue cardValue;
 
-    public Card(String suit, CardValue cardValue) {
+    protected Card(String suit, CardValue cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
     }

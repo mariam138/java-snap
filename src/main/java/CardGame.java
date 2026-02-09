@@ -12,7 +12,7 @@ public class CardGame {
 
     // We pass in the name of game to be played when creating a new card game instance
     // We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
-    public CardGame(String name) {
+    protected CardGame(String name) {
         this.nameOfGame = name;
         this.deckOfCards = new ArrayList<>(52);
         createDeck();
