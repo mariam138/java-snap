@@ -38,7 +38,10 @@ public class Main {
         snap.shuffleDeck();
         System.out.println("The deck has been shuffled!\n");
 
+        int turnNumber = 0;
+
         while (game) {
+            turnNumber++;
             System.out.println("Press enter to deal a card.");
             String userKey = scanner.nextLine();
 
