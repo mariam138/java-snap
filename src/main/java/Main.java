@@ -39,9 +39,13 @@ public class Main {
         System.out.println("The deck has been shuffled!\n");
 
         int turnNumber = 0;
+        Player currentPlayer;
 
         while (game) {
             turnNumber++;
+//            Assign current player based on turn number
+            currentPlayer = (turnNumber % 2 == 0) ? playerTwo : playerOne;
+
             System.out.println("Press enter to deal a card.");
             String userKey = scanner.nextLine();
 
