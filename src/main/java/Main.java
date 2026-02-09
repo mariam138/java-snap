@@ -53,6 +53,7 @@ public class Main {
                 boolean snapOccurred = snap.playTurn();
                 if (snapOccurred) {
                     Thread.sleep(500);
+                    System.out.printf("%s, write 'SNAP' to win!\n", currentPlayer.getPlayerName());
                     printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
                     System.out.println("You win!");
                     game = false;
