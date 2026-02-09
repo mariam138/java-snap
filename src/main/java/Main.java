@@ -9,15 +9,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         PrintWriter printWriter = new PrintWriter(System.out, true);
-        //                System.out.printf("Hello user! Do you want to play %s?\ny/n\n", snap.nameOfGame);
-        //                String input = scanner.next();
-        //                if (input.equals("y")) {
-        //                    System.out.println("Let's play!");
-        //                    scanner.next();
-        //                } else if (input.equals("n")) {
-        //                    System.out.println("Goodbye!");
-        //                    scanner.close();
-        //                }
+
         System.out.printf("Hello! Let's play %s!\n", snap.nameOfGame);
         Thread.sleep(1000);
         System.out.println("This is a two player game.");
@@ -62,11 +54,27 @@ public class Main {
                     long startTime = System.currentTimeMillis();
                     String snapInput = scanner.nextLine();
                     long elapsedTime = System.currentTimeMillis() - startTime;
-                    if (elapsedTime <= 2000) {
-                        System.out.println("You win!");
+                    if (elapsedTime <= 2000 && snapInput.equalsIgnoreCase("snap")) {
+                        printWriter.printf(
+                                "\uD83C\uDCCF %s WINS \uD83C\uDCCF \n",
+                                currentPlayer.getPlayerName().toUpperCase());
+                        currentPlayer.setPlayerWon(true);
 
                     } else {
-                        System.out.println("You lose :(");
+                        System.out.printf(
+                                "Sorry, %s lost :( \n",
+                                currentPlayer.getPlayerName().toUpperCase());
+                        if (currentPlayer.equals(playerOne)) {
+                            playerTwo.setPlayerWon(true);
+                            System.out.printf(
+                                    "\uD83C\uDCCF %s WINS \uD83C\uDCCF",
+                                    playerTwo.getPlayerName().toUpperCase());
+                        } else {
+                            playerOne.setPlayerWon(true);
+                            System.out.printf(
+                                    "\uD83C\uDCCF %s WINS \uD83C\uDCCF",
+                                    playerOne.getPlayerName().toUpperCase());
+                        }
                     }
                     game = false;
                 }
@@ -74,5 +82,3 @@ public class Main {
         }
     }
 }
-
-// printWriter.println("\uD83C\uDCCF SNAP \uD83C\uDCCF");
