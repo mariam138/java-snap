@@ -1,10 +1,9 @@
 public class Player {
     String playerName;
-    boolean playerWon;
+    boolean playerWon = false;
 
     public Player(String playerName) {
         this.playerName = playerName;
-        this.playerWon = false;
     }
 
     public String getPlayerName() {
