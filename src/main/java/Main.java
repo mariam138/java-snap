@@ -32,6 +32,7 @@ public class Main {
 
         int turnNumber = 0;
         Player currentPlayer;
+        Thread.sleep(1000);
 
         while (game) {
             turnNumber++;
