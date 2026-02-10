@@ -16,6 +16,14 @@ public class HigherLower extends CardGame {
         setNoOfPlayers(1);
     }
 
+    public int getCorrectGuessCount() {
+        return correctGuessCount;
+    }
+
+    public void setCorrectGuessCount(int correctGuessCount) {
+        this.correctGuessCount = correctGuessCount;
+    }
+
     @Override
     protected Card dealCard() {
         if (deckOfCards.isEmpty()) {
@@ -46,9 +54,9 @@ public class HigherLower extends CardGame {
         return isUserCorrect;
     }
 
-    protected void playTurn(String userGuess, Player player) {
-        Card currCard = dealCard();
-        System.out.println(currCard);
+    protected boolean playTurn(String userGuess, Player player, Card currCard) {
+//        Card currCard = dealCard();
+//        System.out.println(currCard);
 
         String cardIs = compareCardValues(currCard);
         boolean isUserCorrect = compareUserInput(cardIs, userGuess);
@@ -60,5 +68,6 @@ public class HigherLower extends CardGame {
             player.setPlayerWon(false);
             correctGuessCount = 0;
         }
+        return isUserCorrect;
     }
 }
