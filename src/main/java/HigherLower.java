@@ -9,7 +9,7 @@ public class HigherLower extends CardGame {
     - if user is correct, the next card is dealt and this continues
     - if user is incorrect, the game finishes and the user has lost
      */
-    private Card prevCard = null;
+    private int correctGuessCount = 0;
 
     protected HigherLower(String name) {
         super(name);
@@ -46,15 +46,19 @@ public class HigherLower extends CardGame {
         return isUserCorrect;
     }
 
-    protected void playTurn(String userGuess) {
+    protected void playTurn(String userGuess, Player player) {
         Card currCard = dealCard();
         System.out.println(currCard);
 
         String cardIs = compareCardValues(currCard);
         boolean isUserCorrect = compareUserInput(cardIs, userGuess);
 
-        //       if (!isUserCorrect) {
-        //
-        //       }
+        if (isUserCorrect) {
+            ++correctGuessCount;
+            player.setPlayerWon(true);
+        } else {
+            player.setPlayerWon(false);
+            correctGuessCount = 0;
+        }
     }
 }
