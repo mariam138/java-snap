@@ -5,6 +5,12 @@ public class HigherLowerGameMain {
         HigherLower higherLower = new HigherLower("higher or lower");
         boolean game = true;
 
+        // Custom colours for terminal text
+        // Declaring ANSI_RESET so that we can reset the colour
+        final String ANSI_RESET = "\u001B[0m";
+        // Set colour to cyan
+        final String ANSI_YELLOW = "\u001B[33m";
+
         Scanner scanner = new Scanner(System.in);
         System.out.printf("Hello! Let's play %s!\n", higherLower.getNameOfGame());
         Thread.sleep(1000);
