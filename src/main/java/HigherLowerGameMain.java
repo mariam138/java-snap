@@ -47,7 +47,7 @@ public class HigherLowerGameMain {
                 System.out.printf(
                         "Sorry, wrong guess. The next card is %s.\n", higherLower.compareCardValues(currCard));
                 System.out.println(" ");
-                System.out.println(ANSI_YELLOW + higherLower.nextCard + ANSI_RESET);
+                System.out.println(ANSI_YELLOW + higherLower.getNextCard() + ANSI_RESET);
                 System.out.println("Game over :(");
                 Thread.sleep(500);
                 game = false;
