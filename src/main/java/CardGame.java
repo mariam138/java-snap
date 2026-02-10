@@ -74,8 +74,7 @@ public class CardGame {
         return deckOfCards;
     }
 
-    protected ArrayList<Card> shuffleDeck() {
+    protected void shuffleDeck() {
         Collections.shuffle(deckOfCards);
-        return deckOfCards;
     }
 }
