@@ -64,7 +64,7 @@ public class HigherLower extends CardGame {
             player.setPlayerWon(true);
         } else {
             player.setPlayerWon(false);
-            correctGuessCount = 0;
+            setCorrectGuessCount(0);
         }
         return isUserCorrect;
     }
