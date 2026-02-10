@@ -8,7 +8,7 @@ public class HigherLowerGameMain {
         // Custom colours for terminal text
         // Declaring ANSI_RESET so that we can reset the colour
         final String ANSI_RESET = "\u001B[0m";
-        // Set colour to cyan
+        // Set colour to yellow
         final String ANSI_YELLOW = "\u001B[33m";
 
         Scanner scanner = new Scanner(System.in);
@@ -33,7 +33,7 @@ public class HigherLowerGameMain {
             System.out.println(" ");
             Thread.sleep(1000);
             Card currCard = higherLower.dealCard();
-            System.out.println(currCard);
+            System.out.println(ANSI_YELLOW + currCard + ANSI_RESET);
 
             System.out.println("Is the next card higher or lower?");
             System.out.println("Enter either 'higher' or 'lower': ");
@@ -44,7 +44,10 @@ public class HigherLowerGameMain {
             if (result) {
                 System.out.println("Correct!");
             } else {
-                System.out.printf("Sorry, wrong guess. The next card is %s.\n", higherLower.compareCardValues(currCard));
+                System.out.printf(
+                        "Sorry, wrong guess. The next card is %s.\n", higherLower.compareCardValues(currCard));
+                System.out.println(" ");
+                System.out.println(ANSI_YELLOW + higherLower.nextCard + ANSI_RESET);
                 System.out.println("Game over :(");
                 Thread.sleep(500);
                 game = false;
