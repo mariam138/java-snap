@@ -3,8 +3,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class CardGame {
-    private ArrayList<Card> deckOfCards;
-    private String nameOfGame;
+    private final ArrayList<Card> deckOfCards;
+    private final String nameOfGame;
     private int noOfPlayers;
 
     // spade, club, heart, diamond
