@@ -12,7 +12,7 @@ To use Snap, you will need to clone this repository to your own machine.
 4. In your terminal, use `git clone` followed by the URL. This will clone the repository to your machine.
 5. Now the repository is ready to use.
 
-To play, make sure you are in `Main.java` before running the application.
+To play, make sure you are in `SnapGameMain.java` before running the application.
 
 ## Contributing to Snap
 
