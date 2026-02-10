@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class CardGame {
-    private final ArrayList<Card> deckOfCards;
+    protected ArrayList<Card> deckOfCards;
     private final String nameOfGame;
     private int noOfPlayers;
 
