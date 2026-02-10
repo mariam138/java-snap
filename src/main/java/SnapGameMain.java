@@ -1,7 +1,7 @@
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Main {
+public class SnapGameMain {
     static void main(String[] args) throws InterruptedException {
 
         Snap snap = new Snap("snap");
