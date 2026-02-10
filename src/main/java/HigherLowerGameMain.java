@@ -23,10 +23,26 @@ public class HigherLowerGameMain {
         Thread.sleep(1000);
 
         while (game) {
+            System.out.printf("Current streak: %d\n", higherLower.getCorrectGuessCount());
+            System.out.println(" ");
+            Thread.sleep(1000);
             Card currCard = higherLower.dealCard();
             System.out.println(currCard);
-//            higherLower.playTurn();
-//            break;
+
+            System.out.println("Is the next card higher or lower?");
+            System.out.println("Enter either 'higher' or 'lower': ");
+            String guess = scanner.nextLine().toLowerCase();
+
+            boolean result = higherLower.playTurn(guess, player, currCard);
+
+            if (result) {
+                System.out.println("Correct!");
+            } else {
+                System.out.printf("Sorry, wrong guess. The next card is %s.\n", higherLower.compareCardValues(currCard));
+                System.out.println("Game over :(");
+                Thread.sleep(500);
+                game = false;
+            }
         }
     }
 }
