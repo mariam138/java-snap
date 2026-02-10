@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class CardGame {
     private ArrayList<Card> deckOfCards;
     private String nameOfGame;
-   private int noOfPlayers;
+    private int noOfPlayers;
 
     // spade, club, heart, diamond
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
