@@ -3,15 +3,14 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class CardGame {
-    protected ArrayList<Card> deckOfCards;
-    protected String nameOfGame;
-    int noOfPlayers;
+    private ArrayList<Card> deckOfCards;
+    private String nameOfGame;
+   private int noOfPlayers;
 
     // spade, club, heart, diamond
     private static final String[] SUITS = {"\u2660", "\u2663", "\u2665", "\u2666"};
 
-    // We pass in the name of game to be played when creating a new card game instance
-    // We don't pass in a deck of cards as a param, we just want to create the deck when a game is instantiated
+    // Deck of cards created on game instantiation
     protected CardGame(String name) {
         this.nameOfGame = name;
         this.deckOfCards = new ArrayList<>(52);
@@ -32,6 +31,22 @@ public class CardGame {
                 deckOfCards.add(card);
             }
         }
+    }
+
+    public int getNoOfPlayers() {
+        return noOfPlayers;
+    }
+
+    public void setNoOfPlayers(int noOfPlayers) {
+        this.noOfPlayers = noOfPlayers;
+    }
+
+    public String getNameOfGame() {
+        return nameOfGame;
+    }
+
+    public void setNameOfGame(String nameOfGame) {
+        this.nameOfGame = nameOfGame;
     }
 
     //    Takes card from top of deck and returns it
