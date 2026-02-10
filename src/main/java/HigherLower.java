@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class HigherLower extends CardGame {
@@ -11,7 +10,6 @@ public class HigherLower extends CardGame {
     - if user is incorrect, the game finishes and the user has lost
      */
     private Card prevCard = null;
-    private final ArrayList<Card> deckOfCards = getDeckOfCards();
 
     protected HigherLower(String name) {
         super(name);
@@ -46,5 +44,17 @@ public class HigherLower extends CardGame {
         boolean isUserCorrect;
         isUserCorrect = Objects.equals(userInput, cardIs);
         return isUserCorrect;
+    }
+
+    protected void playTurn(String userGuess) {
+        Card currCard = dealCard();
+        System.out.println(currCard);
+
+        String cardIs = compareCardValues(currCard);
+        boolean isUserCorrect = compareUserInput(cardIs, userGuess);
+
+        //       if (!isUserCorrect) {
+        //
+        //       }
     }
 }
