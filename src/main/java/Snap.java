@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+
 public class Snap extends CardGame {
     Card prevCard = null;
+    ArrayList<Card> deckOfCards = getDeckOfCards();
 
     // Custom colours for terminal text
     // Declaring ANSI_RESET so that we can reset the color
@@ -10,7 +13,7 @@ public class Snap extends CardGame {
 
     protected Snap(String name) {
         super(name);
-        this.noOfPlayers = 2;
+        setNoOfPlayers(2);
     }
 
     //    Checks if deck of cards is empty when dealing a card
@@ -25,8 +28,7 @@ public class Snap extends CardGame {
         return super.dealCard();
     }
 
-    // compare values of last two cards to end game
-    // if true, "You win!" and end game
+    // Compares values of cards to declare snap
     protected boolean compareCardValues(Card prevCard, Card currCard) {
         if (prevCard == null) {
             return false;
