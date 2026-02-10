@@ -16,5 +16,17 @@ public class HigherLowerGameMain {
         Player player = new Player(name);
 
         System.out.printf("Okay %s, let's play higher or lower!\n", player.getPlayerName());
+        Thread.sleep(2000);
+
+        higherLower.shuffleDeck();
+        System.out.println("The deck has been shuffled!");
+        Thread.sleep(1000);
+
+        while (game) {
+            Card currCard = higherLower.dealCard();
+            System.out.println(currCard);
+//            higherLower.playTurn();
+//            break;
+        }
     }
 }
