@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
-public class HigherLower extends CardGame
-{
+public class HigherLower extends CardGame {
     /*
     - one player game
     - shuffle the cards
@@ -18,4 +17,12 @@ public class HigherLower extends CardGame
         setNoOfPlayers(1);
     }
 
+    @Override
+    protected Card dealCard() {
+        if (deckOfCards.isEmpty()) {
+            createDeck();
+            shuffleDeck();
+        }
+        return super.dealCard();
+    }
 }
