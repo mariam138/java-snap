@@ -1,6 +1,6 @@
 public class Player {
-    String playerName;
-    boolean playerWon = false;
+    private String playerName;
+    protected boolean playerWon = false;
 
     protected Player(String playerName) {
         this.playerName = playerName;
