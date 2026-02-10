@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         PrintWriter printWriter = new PrintWriter(System.out, true);
 
-        System.out.printf("Hello! Let's play %s!\n", snap.nameOfGame);
+        System.out.printf("Hello! Let's play %s!\n", snap.getNameOfGame());
         Thread.sleep(1000);
         System.out.println("This is a two player game.");
         Thread.sleep(1000);
