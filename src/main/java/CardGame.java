@@ -33,10 +33,6 @@ public class CardGame {
         }
     }
 
-    public int getNoOfPlayers() {
-        return noOfPlayers;
-    }
-
     public void setNoOfPlayers(int noOfPlayers) {
         this.noOfPlayers = noOfPlayers;
     }
@@ -45,16 +41,8 @@ public class CardGame {
         return nameOfGame;
     }
 
-    public void setNameOfGame(String nameOfGame) {
-        this.nameOfGame = nameOfGame;
-    }
-
     public ArrayList<Card> getDeckOfCards() {
         return deckOfCards;
-    }
-
-    public void setDeckOfCards(ArrayList<Card> deckOfCards) {
-        this.deckOfCards = deckOfCards;
     }
 
     //    Takes card from top of deck and returns it
