@@ -1,14 +1,7 @@
 import java.util.Objects;
 
 public class HigherLower extends CardGame {
-    /*
-    - one player game
-    - shuffle the cards
-    - deal a card
-    - user must then guess if the next card is higher or lower
-    - if user is correct, the next card is dealt and this continues
-    - if user is incorrect, the game finishes and the user has lost
-     */
+
     private int correctGuessCount = 0;
 
     protected HigherLower(String name) {
