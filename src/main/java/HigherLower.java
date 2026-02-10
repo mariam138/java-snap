@@ -55,8 +55,6 @@ public class HigherLower extends CardGame {
     }
 
     protected boolean playTurn(String userGuess, Player player, Card currCard) {
-//        Card currCard = dealCard();
-//        System.out.println(currCard);
 
         String cardIs = compareCardValues(currCard);
         boolean isUserCorrect = compareUserInput(cardIs, userGuess);
