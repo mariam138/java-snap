@@ -31,3 +31,8 @@ To contribute to Snap, follow these steps:
 
 Alternatively see the GitHub documentation
 on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+## Further Improvements
+
+- [ ] Create a user control flow from a single source (eg, `Main.java`) to allow user to choose which game to play
+- [ ] In `SnapGameMain.java`, create a timer for player to enter *"snap"* rather than comparing elapsed time
