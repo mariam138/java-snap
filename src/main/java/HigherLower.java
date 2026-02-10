@@ -25,4 +25,19 @@ public class HigherLower extends CardGame {
         }
         return super.dealCard();
     }
+
+    protected String compareCardValues(Card currCard) {
+        String cardIs = null;
+        Card nextCard = deckOfCards.getLast();
+
+        if (nextCard.getCardValue().compareTo(currCard.getCardValue()) > 0) {
+            cardIs = "higher";
+
+        } else if (nextCard.getCardValue().compareTo(currCard.getCardValue()) < 0) {
+            cardIs = "lower";
+        } else if (nextCard.getCardValue().compareTo(currCard.getCardValue()) == 0) {
+            cardIs = "equal";
+        }
+        return cardIs;
+    }
 }
