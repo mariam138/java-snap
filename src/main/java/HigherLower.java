@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class HigherLower extends CardGame {
     /*
@@ -39,5 +40,11 @@ public class HigherLower extends CardGame {
             cardIs = "equal";
         }
         return cardIs;
+    }
+
+    protected boolean compareUserInput(String cardIs, String userInput) {
+        boolean isUserCorrect;
+        isUserCorrect = Objects.equals(userInput, cardIs);
+        return isUserCorrect;
     }
 }
