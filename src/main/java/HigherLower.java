@@ -1,8 +1,8 @@
 import java.util.Objects;
 
 public class HigherLower extends CardGame {
-
     private int correctGuessCount = 0;
+    private Card nextCard = deckOfCards.getLast();
 
     protected HigherLower(String name) {
         super(name);
@@ -17,6 +17,10 @@ public class HigherLower extends CardGame {
         this.correctGuessCount = correctGuessCount;
     }
 
+    public Card getNextCard() {
+        return nextCard;
+    }
+
     @Override
     protected Card dealCard() {
         if (deckOfCards.isEmpty()) {
@@ -28,7 +32,6 @@ public class HigherLower extends CardGame {
 
     protected String compareCardValues(Card currCard) {
         String cardIs = null;
-        Card nextCard = deckOfCards.getLast();
 
         if (nextCard.getCardValue().compareTo(currCard.getCardValue()) > 0) {
             cardIs = "higher";
