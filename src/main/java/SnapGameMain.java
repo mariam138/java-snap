@@ -41,43 +41,50 @@ public class SnapGameMain {
 
             System.out.printf("%s's TURN:\n", currentPlayer.getPlayerName().toUpperCase());
             System.out.println("Press enter to deal a card.");
-            String userKey = scanner.nextLine();
 
-            if (userKey.isEmpty()) {
-                boolean snapOccurred = snap.playTurn();
-                if (snapOccurred) {
-                    Thread.sleep(500);
-                    System.out.printf(
-                            "%s, write 'SNAP' to win!\n",
-                            currentPlayer.getPlayerName().toUpperCase());
-                    // Calculate elapsed time that user took to enter "snap"
-                    // Then compare elapsed time to 2 seconds to determine whether user has won
-                    long startTime = System.currentTimeMillis();
-                    String snapInput = scanner.nextLine();
-                    long elapsedTime = System.currentTimeMillis() - startTime;
-                    if (elapsedTime <= 2000 && snapInput.equalsIgnoreCase("snap")) {
-                        printWriter.printf(
-                                "\uD83C\uDCCF %s WINS \uD83C\uDCCF \n",
-                                currentPlayer.getPlayerName().toUpperCase());
-                        currentPlayer.setPlayerWon(true);
+            while (true) {
+                String userKey = scanner.nextLine();
+                if (userKey.isEmpty()) {
+                    boolean snapOccurred = snap.playTurn();
 
-                    } else {
+                    if (snapOccurred) {
+                        Thread.sleep(500);
                         System.out.printf(
-                                "Sorry, %s lost :( \n",
+                                "%s, write 'SNAP' to win!\n",
                                 currentPlayer.getPlayerName().toUpperCase());
-                        if (currentPlayer.equals(playerOne)) {
-                            playerTwo.setPlayerWon(true);
-                            System.out.printf(
-                                    "\uD83C\uDCCF %s WINS \uD83C\uDCCF",
-                                    playerTwo.getPlayerName().toUpperCase());
+                        // Calculate elapsed time that user took to enter "snap"
+                        // Then compare elapsed time to 2 seconds to determine whether user has won
+                        long startTime = System.currentTimeMillis();
+                        String snapInput = scanner.nextLine();
+                        long elapsedTime = System.currentTimeMillis() - startTime;
+                        if (elapsedTime <= 2000 && snapInput.equalsIgnoreCase("snap")) {
+                            printWriter.printf(
+                                    "\uD83C\uDCCF %s WINS \uD83C\uDCCF \n",
+                                    currentPlayer.getPlayerName().toUpperCase());
+                            currentPlayer.setPlayerWon(true);
+
                         } else {
-                            playerOne.setPlayerWon(true);
                             System.out.printf(
-                                    "\uD83C\uDCCF %s WINS \uD83C\uDCCF",
-                                    playerOne.getPlayerName().toUpperCase());
+                                    "Sorry, %s lost :( \n",
+                                    currentPlayer.getPlayerName().toUpperCase());
+                            if (currentPlayer.equals(playerOne)) {
+                                playerTwo.setPlayerWon(true);
+                                System.out.printf(
+                                        "\uD83C\uDCCF %s WINS \uD83C\uDCCF",
+                                        playerTwo.getPlayerName().toUpperCase());
+                            } else {
+                                playerOne.setPlayerWon(true);
+                                System.out.printf(
+                                        "\uD83C\uDCCF %s WINS \uD83C\uDCCF",
+                                        playerOne.getPlayerName().toUpperCase());
+                            }
                         }
+                        game = false;
                     }
-                    game = false;
+                    break;
+                } else {
+                    System.out.println("Invalid input.");
+                    System.out.println("Please press enter to deal a card.");
                 }
             }
         }
