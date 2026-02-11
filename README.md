@@ -13,6 +13,7 @@ To use Snap, you will need to clone this repository to your own machine.
 5. Now the repository is ready to use.
 
 To play, make sure you are in `SnapGameMain.java` before running the application.
+- Click the green arrow at the top of the IDE to run the application, or alternatively press ^F5.
 
 ### Playing Higher or Lower
 
