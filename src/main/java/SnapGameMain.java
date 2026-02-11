@@ -81,6 +81,26 @@ public class SnapGameMain {
                 game = false;
             }
         }
+
+        System.out.println("Would you like to play again? (y/n)");
+        String playAgain = scanner.nextLine();
+
+        switch (playAgain) {
+            case "y":
+                turnNumber = 0;
+                currentPlayer = null;
+                snap.shuffleDeck();
+                System.out.println("The deck has been shuffled!\n");
+                game = true;
+                Thread.sleep(1000);
+                break;
+            case "n":
+                System.out.println("Goodbye!");
+                scanner.close();
+                break;
+            default:
+                System.out.println("Invalid input. Please enter y/n");
+        }
     }
 
     //    Waits for user to press "Enter" before breaking loop and entering the rest of the main game
