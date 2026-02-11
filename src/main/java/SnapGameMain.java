@@ -55,6 +55,7 @@ public class SnapGameMain {
                     System.out.printf(
                             "%s, write 'SNAP' to win!\n",
                             currentPlayer.getPlayerName().toUpperCase());
+                    System.out.println("You only have two seconds to win!");
                     // Calculate elapsed time that user took to enter "snap"
                     // Then compare elapsed time to 2 seconds to determine whether user has won
                     long startTime = System.currentTimeMillis();
