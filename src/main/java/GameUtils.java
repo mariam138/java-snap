@@ -6,7 +6,7 @@ public class GameUtils {
     }
 
     //    While loop to ask user if they want to play again before game exits
-    private static boolean askToPlayAgain(Scanner scanner) {
+    public static boolean askToPlayAgain(Scanner scanner) {
         System.out.println("Would you like to play again? (y/n)");
 
         while (true) {
