@@ -36,3 +36,4 @@ on [creating a pull request](https://help.github.com/en/github/collaborating-wit
 
 - [ ] Create a user control flow from a single source (eg, `Main.java`) to allow user to choose which game to play
 - [ ] In `SnapGameMain.java`, create a timer for player to enter *"snap"* rather than comparing elapsed time
+- [ ] Add **JUnit** testing to ensure higher confidence in code
