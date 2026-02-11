@@ -29,6 +29,9 @@ To play, make sure you are in `SnapGameMain.java` before running the application
 Using OOP logic, a second game - **Higher or Lower** has been created also. To play, make sure you are in
 `HigherLowerGameMain.java` before running the application.
 
+The user must guess whether the next card in the deck is higher or lower than the current card. A wrong guess will end
+the game.
+
 ## Contributing to Snap
 
 To contribute to Snap, follow these steps:
