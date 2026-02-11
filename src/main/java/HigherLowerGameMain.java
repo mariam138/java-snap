@@ -37,21 +37,32 @@ public class HigherLowerGameMain {
 
             System.out.println("Is the next card higher or lower?");
             System.out.println("Enter either 'higher' or 'lower': ");
-            String guess = scanner.nextLine().toLowerCase();
 
+//            Use String value from return and pass it into result
+            String guess = waitForValidInput(scanner);
             boolean result = higherLower.playTurn(guess, player, currCard);
 
             if (result) {
                 System.out.println("Correct!");
             } else {
                 System.out.printf(
-                        "Sorry, wrong guess. The next card is %s.\n", higherLower.compareCardValues(currCard));
+                        "Sorry, wrong guess. The next card was %s.\n", higherLower.compareCardValues(currCard));
                 System.out.println(" ");
                 System.out.println(ANSI_YELLOW + higherLower.getNextCard() + ANSI_RESET);
                 System.out.println("Game over :(");
                 Thread.sleep(500);
                 game = false;
             }
+        }
+    }
+
+    private static String waitForValidInput(Scanner scanner) {
+        while (true) {
+            String guess = scanner.nextLine().toLowerCase();
+            if (guess.equalsIgnoreCase("higher") || (guess.equalsIgnoreCase("lower"))) {
+                return guess;
+            }
+            System.out.println("Invalid input. Please enter 'higher' or 'lower'.");
         }
     }
 }
