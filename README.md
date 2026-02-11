@@ -1,7 +1,6 @@
 # Snap
 
-A Java terminal interpretation based on the card game **Snap**, using OOP. Created as portfolio project number 3 for **
-_nology**.
+A Java terminal interpretation based on the card game **Snap**, using OOP. Created as portfolio project number 3 for **nology**.
 
 ## Using Snap
 
