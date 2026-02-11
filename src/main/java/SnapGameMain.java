@@ -23,8 +23,8 @@ public class SnapGameMain {
         Player playerOne = new Player(nameOne);
         Player playerTwo = new Player(nameTwo);
 
-        System.out.printf("Player 1: %s\n", playerOne.getPlayerName());
-        System.out.printf("Player 2: %s\n", playerTwo.getPlayerName());
+        System.out.printf("Player 1: %s\n", playerOne.getPlayerName().toUpperCase());
+        System.out.printf("Player 2: %s\n", playerTwo.getPlayerName().toUpperCase());
         System.out.println("Let's play!");
         Thread.sleep(2000);
         snap.shuffleDeck();
